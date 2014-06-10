@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8;"/>
+		<title>蓝牙推送服务端</title>
+		<script type="text/javascript" src="/assets/storage.js"></script>
+		<script type="text/javascript" src="/assets/index.js"></script>
+		<link type="text/css" rel="stylesheet" href="/assets/index.css">
+	</head>
+	<body>
+		<div id="logo" class="titleLogo">
+			<img src="/assets/img/logo.png" title="orange_star" />
+		</div>
+		<div id="logoDiv" class="logionDialog">
+			<form action="check_login" method="post">
+			<label for="user_name">用户名:</label>
+			<input type="text" name="user_name" id="user_name" placeholder="登录帐号(用户名)";/><br />
+			<label for="password">密　码:</label>
+			<input type="password" name="password" id="password" /><br />
+			<input type="submit" value="登录"/>
+			</form>
+		</div>
+		<h4 style="color: red;  text_align: center;"><%= params[:notice]%></h4>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8;"/>
+		<title>蓝牙推送服务端</title>
+		<script type="text/javascript" src="/assets/storage.js"></script>
+		<link type="text/css" rel="stylesheet" href="/assets/index.css">
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if(getData("user_name") != null){
+					$("#tilteRight span:last").text(getData("user_name"));
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="titleDiv" class="titleLogo">
+			<img src="/assets/img/logo.png" title="orange_star" />
+			<div id="tilteRight">
+				<span>用户名：</span><span>test</span>
+			</div>
+		</div>
+	</body>
+</html>

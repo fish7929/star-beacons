@@ -1,0 +1,49 @@
+<h1>Listing patterns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uuid</th>
+      <th>Activities start date top</th>
+      <th>Activities start date left</th>
+      <th>Activities start date width</th>
+      <th>Activities start date height</th>
+      <th>Activities end date top</th>
+      <th>Activities end date left</th>
+      <th>Activities end date width</th>
+      <th>Activities end date height</th>
+      <th>Coupon top</th>
+      <th>Coupon left</th>
+      <th>Coupon width</th>
+      <th>Coupon height</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patterns.each do |pattern| %>
+      <tr>
+        <td><%= pattern.uuid %></td>
+        <td><%= pattern.activities_start_date_top %></td>
+        <td><%= pattern.activities_start_date_left %></td>
+        <td><%= pattern.activities_start_date_width %></td>
+        <td><%= pattern.activities_start_date_height %></td>
+        <td><%= pattern.activities_end_date_top %></td>
+        <td><%= pattern.activities_end_date_left %></td>
+        <td><%= pattern.activities_end_date_width %></td>
+        <td><%= pattern.activities_end_date_height %></td>
+        <td><%= pattern.coupon_top %></td>
+        <td><%= pattern.coupon_left %></td>
+        <td><%= pattern.coupon_width %></td>
+        <td><%= pattern.coupon_height %></td>
+        <td><%= link_to 'Show', pattern %></td>
+        <td><%= link_to 'Edit', edit_pattern_path(pattern) %></td>
+        <td><%= link_to 'Destroy', pattern, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pattern', new_pattern_path %>

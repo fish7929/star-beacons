@@ -1,0 +1,69 @@
+<%= form_for(@pattern) do |f| %>
+  <% if @pattern.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pattern.errors.count, "error") %> prohibited this pattern from being saved:</h2>
+
+      <ul>
+      <% @pattern.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_start_date_top %><br>
+    <%= f.number_field :activities_start_date_top %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_start_date_left %><br>
+    <%= f.number_field :activities_start_date_left %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_start_date_width %><br>
+    <%= f.number_field :activities_start_date_width %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_start_date_height %><br>
+    <%= f.number_field :activities_start_date_height %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_end_date_top %><br>
+    <%= f.number_field :activities_end_date_top %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_end_date_left %><br>
+    <%= f.number_field :activities_end_date_left %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_end_date_width %><br>
+    <%= f.number_field :activities_end_date_width %>
+  </div>
+  <div class="field">
+    <%= f.label :activities_end_date_height %><br>
+    <%= f.number_field :activities_end_date_height %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_top %><br>
+    <%= f.number_field :coupon_top %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_left %><br>
+    <%= f.number_field :coupon_left %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_width %><br>
+    <%= f.number_field :coupon_width %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_height %><br>
+    <%= f.number_field :coupon_height %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,283 @@
+﻿/* --------common----- */
+body {
+	margin: 0;
+	padding: 0;
+	color: #333333;
+	background-color: #F7F7F7;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14;
+}
+
+a {
+	text-decoration: none;
+}
+a:link {
+	color:#333333;
+}
+a:visited {
+	color:#333333;
+}
+a:hover {
+	color:#333333;
+}
+a:active {
+	color:#333333;
+}
+
+a img {
+	border: 0;
+}
+
+p{
+	margin: 0 0 1em;
+}
+/* --------index.html----- */
+.titleLogo{
+	height: 80px;
+	background-color: #3196CA;
+	padding-top: 6px;
+	padding-left: 5px;
+}
+.logionDialog{
+	border: 1px solid #aaa;
+	width: 450px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	border-radius: 5px;
+}
+.logionDialog label{
+	width: 300px;
+	margin-left: 30px;
+}
+
+.logionDialog input{
+	width: 300px;
+	height: 35px;
+	margin-top: 50px;
+	margin-left: 10px;
+	border-radius: 10px;
+}
+.logionDialog input[type='submit']{
+	height: 40px;
+	width: 370px;
+	margin-top: 50px;
+	margin-left: 30px;
+	font-size: 23;
+	background-color: #3196CA;
+	border-radius: 10px;
+}
+
+/* --------main.html----- */
+.titleLogo #tilteRight{
+	float: right;
+	margin-top: 25px;
+	padding-right: 50px;
+}
+
+.titleLogo #tilteRight span{
+	color: red;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#leftDiv  ul {
+	margin: 0;
+	padding: 0;
+}
+
+#leftDiv  li {
+	text-align: center;
+	list-style-type:none;
+	border: 1px solid #aaa;
+	background-color: #3196CA;
+	height: 40px;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 30px;
+	margin-right: 20px;
+	margin-left: 20px;
+	padding-top: 10px;
+}
+
+#history  li:first-child{
+	margin-top: 25px;
+}
+
+#history  li{
+	height: 20px;
+	margin-top: 10px;
+	background-color: green;
+	margin-right: 0;
+	margin-left: 10px;
+	font-size: 16px;
+	font-weight: normal;
+	padding-top: 3px;
+}
+
+#rightDiv {
+	width: 100%;
+}
+
+/* --------demo.html----- */
+.demoDiv{
+	text-align: center;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.demoUl{
+	width:800px;/*可以控制一排显示图片个数*/
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.demoUl li{
+	list-style-type:none;
+	float:left;/*左浮动*/
+	margin-right:100px;
+	margin-top:70px;
+}
+
+.demoUl img{
+	width: 160px;
+	height: 150px;
+	border:1px solid red;
+	border-radius: 5px;
+}
+
+/* --------edit_demo.html----- */
+
+.editDemoDiv{
+	text-align: center;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.editDemoForm{
+	width: 300px;
+	height: 500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+	background: url(../img/demo1.jpg) no-repeat;
+}
+
+.editDemoDiv input[type="button"]{
+	width: 100px;
+	background-color: #3196CA;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+.editDemoDiv input[type="text"]{
+	width: 40px;
+	height: 15px;
+	margin-top: 198px;
+	border-radius: 1px;
+	font-size: 2px;
+	color: green;
+}
+.editDemoDiv input[type="text"]:first-child{
+	font-size: 2px;
+	margin-left: 155px;
+}
+
+.editDemoDiv input[type="text"]:last-child{
+	width: 30px;
+	height: 30px;
+	margin-top: 58px;
+	margin-left: 143px;
+	display: block;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 30px;
+	color: red;
+	font-weight: bold;
+}
+
+/* --------custom.html----- */
+
+.customDiv{
+	text-align: center;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.customForm{
+	width: 300px;
+	height: 500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+}
+.customForm input[type="file"] {
+	margin-top: 100px;
+	width: 200px;
+	height: 100px;
+}
+.customForm button {
+	background-color: #3196CA;
+}
+
+.customDiv input[type="button"]{
+	width: 100px;
+	background-color: #3196CA;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+
+/* --------release_history.html----- */
+.releaseDiv{
+	text-align: center;
+	margin-left: auto;
+	margin-right:auto;
+
+}
+
+.releaseDiv table{
+	width: 800px;
+	margin-left: auto;
+	margin-right:auto;
+	border-color: green;
+	
+}
+
+/* --------unpublished_history.html----- */
+.unpublishedDiv{
+	text-align: center;
+	margin-left: auto;
+	margin-right:auto;
+
+}
+
+.unpublishedDiv table{
+	width: 800px;
+	margin-left: auto;
+	margin-right:auto;
+	border-color: green;
+	
+}
+
+/* --------unpublished_history.html----- */
+.overdueDiv{
+	text-align: center;
+	margin-left: auto;
+	margin-right:auto;
+
+}
+
+.overdueDiv table{
+	width: 800px;
+	margin-left: auto;
+	margin-right:auto;
+	border-color: green;
+	
+}
+
+
+
+

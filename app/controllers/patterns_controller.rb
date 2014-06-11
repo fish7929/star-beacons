@@ -67,32 +67,32 @@ class PatternsController < ApplicationController
 
   def login
   end
+
+  def main
+
+  end
+
+
+  def main_right
+
+  end
+
   def check_login
     user_name = params[:user_name]
     password = params[:password]
     if password.empty? || user_name.empty?
       redirect_to(:action=>"login", :notice=>"用户名或者密码不能为空")
     elsif password == "123456" && user_name == "test123"
-      redirect_to(:action=>"main_frame", :user=>"#{user_name}")
+      redirect_to(:action=>"main", :user=>"#{user_name}")
     else
       redirect_to(:action=>"login", :notice=>"用户名或者密码错误")
     end
   
   end
 
-  def main_frame
-  end
-  def main_title
-
-  end
-
-  def main_right
-  
-  end
-
-  def main_left
-  
-  end
+  def demo
+    @patterns = Pattern.all
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -102,6 +102,6 @@ class PatternsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pattern_params
-      params.require(:pattern).permit(:image, :activities_start_date_top, :activities_start_date_left, :activities_start_date_width, :activities_start_date_height, :activities_end_date_top, :activities_end_date_left, :activities_end_date_width, :activities_end_date_height, :coupon_top, :coupon_left, :coupon_width, :coupon_height)
+      params.require(:pattern).permit(:image, :activities_start_date_top, :activities_start_date_left, :activities_start_date_width, :activities_start_date_height, :activities_end_date_top, :activities_end_date_left, :activities_end_date_width, :activities_end_date_height, :coupon_top, :coupon_left, :coupon_width, :coupon_height, :pattern_type)
     end
 end

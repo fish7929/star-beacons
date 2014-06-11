@@ -2,16 +2,15 @@ Rails.application.routes.draw do
   resources :patterns do
     collection do
       get :login	
-      get:check_login	
-      post:check_login	
-      get :main_frame
-      get :main_title
+#      get :check_login	
+      post :check_login	
       get :main_right
-      get :main_left
+      get :main
+      get :demo
     end
   end
 
-  root :to => 'patterns#login'
+  #root :to => 'patterns#login'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

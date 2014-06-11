@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610073812) do
+ActiveRecord::Schema.define(version: 20140611060624) do
 
   create_table "patterns", force: true do |t|
     t.string   "uuid"
@@ -33,28 +33,7 @@ ActiveRecord::Schema.define(version: 20140610073812) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-  end
-
-  create_table "templates", force: true do |t|
-    t.string   "uuid"
-    t.string   "status"
-    t.text     "advertising"
-    t.string   "time_location"
-    t.integer  "time_font_size"
-    t.string   "time_font_family"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.string   "discunt_location"
-    t.integer  "discunt_font_size"
-    t.string   "discunt_font_family"
-    t.string   "discunt"
-    t.datetime "release_end_time"
-    t.datetime "release_start_time"
-    t.datetime "time"
-    t.integer  "beacon_id"
-    t.datetime "send_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "pattern_type"
   end
 
 end

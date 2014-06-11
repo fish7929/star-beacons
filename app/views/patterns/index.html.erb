@@ -16,10 +16,11 @@
       <th>Coupon left</th>
       <th>Coupon width</th>
       <th>Coupon height</th>
+      <th>Type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
+												pattern_type %)</td>		
   <tbody>
     <% @patterns.each do |pattern| %>
       <tr>
@@ -36,6 +37,7 @@
         <td><%= pattern.coupon_left %></td>
         <td><%= pattern.coupon_width %></td>
         <td><%= pattern.coupon_height %></td>
+        <td><%= pattern.pattern_type %></td>
         <td><%= link_to 'Show', pattern %></td>
         <td><%= link_to 'Edit', edit_pattern_path(pattern) %></td>
         <td><%= link_to 'Destroy', pattern, method: :delete, data: { confirm: 'Are you sure?' } %></td>

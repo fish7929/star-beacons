@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :uuid %><br>
-    <%= f.text_field :uuid %>
+    <%= f.label "Upload template" %><br>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :activities_start_date_top %><br>
@@ -62,6 +62,10 @@
   <div class="field">
     <%= f.label :coupon_height %><br>
     <%= f.number_field :coupon_height %>
+  </div>
+  <div class="field">
+    <%= f.label :pattern_type %><br>
+    <%= f.text_field :pattern_type %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,0 +1,38 @@
+		<div class="customDiv">
+			<script type="text/javascript">
+				function handleFiles(files) {
+					for (var i = 0; i < files.length; i++){
+						var file = files[i];
+						var reader = new FileReader();
+						reader.onload = function(e){
+							document.getElementById("custom").src = e.target.result;  
+						};
+						reader.readAsDataURL(file);
+					}
+				}
+			</script>
+			<form class="customForm" action="/send_queues" method="post" >
+				<input type="file" name="image" onchange="handleFiles(this.files);"/>
+				<img src="/assets/img/demo.jpg" id="custom"/>
+				<div id="customDate">
+					<label for="start_date">活动日期:</label>
+					<input type="date" id="start_date" name="start_date"/> -
+					<input type="date" id="end_date" name="end_date"/>
+				</div>
+				<div id="customRelease">
+					<label for="release_start_date">发布日期:</label>
+					<input type="date" id="release_start_date" name="release_start_date"/> -
+					<input type="date" id="release_end_date" name="release_end_date"/>
+				</div>
+				<div class="beaconsID">
+					<label for="beacons_id">允许的蓝牙基站号:</label>
+					<select name="beacons_id" id="beacons_id">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+				</div>
+				<input type="submit"  id="draft" name="commit" value="草稿"/>
+				<input type="submit"  id="release" name="commit" value="发布"/>
+			</form>
+		</div>

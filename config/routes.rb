@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  resources :patterns do
+
+
+  resources :send_queues
+
+  resources :templates do
     collection do
       get :login	
-#      get :check_login	
       post :check_login	
-      get :main_right
-      get :main
-      get :demo
+      get :beacons_service
+      get :frame_welcome
+      get :custom
     end
   end
 

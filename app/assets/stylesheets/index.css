@@ -119,49 +119,69 @@ p{
 }
 
 .editDemoForm{
-	width: 300px;
-	height: 500px;
+	width: 400px;
+	height: 700px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:10px;
-	background: url(../img/demo1.jpg) no-repeat;
+	/*
+	border: 1px solid red;
+	
+	background: url(../img/demoads-01.png) no-repeat;
+	*/
+}
+.editDemoForm  img{
+	/*
+	position: absolute;
+	*/
+	position: relative;
+	z-index: -1;
+	
+}
+.editDemoDiv input[type="text"]{
+	width: 20px;
+	height: 40px;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 38px;
+	position: relative;
+	top: -200px;
+	left: -175px;
+	color: red;
+	font-weight: bold;
+	background-color:transparent;
+	border: 0;
 }
 
-.editDemoDiv input[type="button"]{
+#activitiesDate {
+	font-size: 12px;
+	margin-top: -40px;
+	margin-left: -15px;
+}
+
+#activitiesDate input[type="date"]{
+	font-size: 12px;
+	width: 110px;
+	background-color:transparent;
+	border: 0;
+}
+
+#releaseDate {
+	margin-top: 40px;
+}
+.beaconsID {
+	margin-top: 20px;
+	margin-left: -210px;
+}
+
+.editDemoDiv input[type="submit"]{
 	width: 100px;
 	background-color: #3196CA;
-	margin-top: 10px;
+	margin-top: 20px;
 	border-radius: 5px;
 }
 
-.editDemoDiv input[type="text"]{
-	width: 40px;
-	height: 15px;
-	margin-top: 198px;
-	border-radius: 1px;
-	font-size: 2px;
-	color: green;
-}
-.editDemoDiv input[type="text"]:first-child{
-	font-size: 2px;
-	margin-left: 155px;
-}
-
-.editDemoDiv input[type="text"]:last-child{
-	width: 30px;
-	height: 30px;
-	margin-top: 58px;
-	margin-left: 143px;
-	display: block;
-	border-radius: 3px;
-	text-align: center;
-	font-size: 30px;
-	color: red;
-	font-weight: bold;
-}
-
 /* --------custom.html----- */
-
 .customDiv{
 	text-align: center;
 	margin-left: auto;
@@ -169,28 +189,44 @@ p{
 }
 
 .customForm{
-	width: 300px;
-	height: 500px;
+	width: 400px;
+	height: 700px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:10px;
 }
-.customForm input[type="file"] {
-	margin-top: 100px;
-	width: 200px;
-	height: 100px;
-}
-.customForm button {
-	background-color: #3196CA;
+.customForm input[type="file"]{
+	height: 30px;
 }
 
-.customDiv input[type="button"]{
+.customForm  img{
+	position: relative;
+	width: 320px;
+	height: 533px;
+	z-index: -1;
+
+}
+#customDate {
+	font-size: 12px;
+	margin-top: -40px;
+	margin-left: -15px;
+}
+
+#customDate input[type="date"]{
+	font-size: 12px;
+	width: 110px;
+	background-color:transparent;
+	border: 0;
+}
+#customRelease {
+	margin-top: 30px;
+}
+.customForm input[type="submit"]{
 	width: 100px;
 	background-color: #3196CA;
 	margin-top: 10px;
 	border-radius: 5px;
 }
-
 
 /* --------release_history.html----- */
 .releaseDiv{

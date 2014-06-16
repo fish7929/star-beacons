@@ -1,0 +1,13 @@
+<div class="demoDiv">
+	<ul class="demoUl">
+		<% @templates.each do |template| %>
+		<li>
+			<a href="/templates/<%= template.id %>" target="myFrame">
+				<%=  image_tag template.image.url(:thumb) %>
+				<p></p>
+				<span> <%= template.template_type %> </span>
+			</a>
+		</li>
+		<% end %>
+	</ul>
+</div>

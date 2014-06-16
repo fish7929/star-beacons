@@ -1,0 +1,89 @@
+<%= form_for(@template) do |f| %>
+  <% if @template.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@template.errors.count, "error") %> prohibited this template from being saved:</h2>
+
+      <ul>
+      <% @template.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+		<%= f.label "Upload template" %><br>
+		<%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date_top %><br>
+    <%= f.text_field :start_date_top %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date_left %><br>
+    <%= f.text_field :start_date_left %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date_width %><br>
+    <%= f.text_field :start_date_width %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date_height %><br>
+    <%= f.text_field :start_date_height %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_top %><br>
+    <%= f.text_field :end_date_top %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_left %><br>
+    <%= f.text_field :end_date_left %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_width %><br>
+    <%= f.text_field :end_date_width %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_height %><br>
+    <%= f.text_field :end_date_height %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_top %><br>
+    <%= f.text_field :coupon_top %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_left %><br>
+    <%= f.text_field :coupon_left %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_width %><br>
+    <%= f.text_field :coupon_width %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_height %><br>
+    <%= f.text_field :coupon_height %>
+  </div>
+  <div class="field">
+    <%= f.label :date_font_size %><br>
+    <%= f.text_field :date_font_size %>
+  </div>
+  <div class="field">
+    <%= f.label :date_font_color %><br>
+    <%= f.text_field :date_font_color %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_font_size %><br>
+    <%= f.text_field :coupon_font_size %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_font_color %><br>
+    <%= f.text_field :coupon_font_color %>
+  </div>
+  <div class="field">
+    <%= f.label :template_type %><br>
+    <%= f.text_field :template_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

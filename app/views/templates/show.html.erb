@@ -1,0 +1,27 @@
+<div class="editDemoDiv">
+	<form class="editDemoForm" action="/send_queues" method="post">
+		<input type="hidden" name="my_id" value="<%= @template.id %>">
+		<%= image_tag @template.image.url(:medium) %>
+		<input type="text" id="coupon" name="coupon"/>
+		<div id="activitiesDate">
+			<label for="start_date">活动日期:</label>
+			<input type="date" id="start_date" name="start_date"/> -
+			<input type="date" id="end_date" name="end_date"/>
+		</div>
+		<div id="releaseDate">
+			<label for="release_start_date">发布日期:</label>
+			<input type="date" id="release_start_date" name="release_start_date"/> -
+			<input type="date" id="release_end_date" name="release_end_date"/>
+		</div>
+		<div class="beaconsID">
+			允许的蓝牙基站号:
+			<select name="beacons_id" id="beacons_id">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+		</div>
+		<input type="submit"  id="draft" name="commit" value="草稿"/>
+		<input type="submit"  id="release" name="commit" value="发布"/>
+	</form>
+</div>

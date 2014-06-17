@@ -54,7 +54,7 @@ class SendQueuesController < ApplicationController
 #@send_queue.end_date_left = template.end_date_left
 #			@send_queue.end_date_width = template.end_date_width
 #			@send_queue.end_date_height = template.end_date_height
-			@send_queue.end_dat = params[:end_date]
+			@send_queue.end_date = params[:end_date]
 
 #			@send_queue.date_font_size = template.date_font_size
 #			@send_queue.date_font_color = template.date_font_color
@@ -83,7 +83,7 @@ class SendQueuesController < ApplicationController
 			@send_queue.end_date_left = template.end_date_left
 			@send_queue.end_date_width = template.end_date_width
 			@send_queue.end_date_height = template.end_date_height
-			@send_queue.end_dat = params[:end_date]
+			@send_queue.end_date = params[:end_date]
 
 			@send_queue.coupon_top = template.coupon_top
 			@send_queue.coupon_left = template.coupon_left

@@ -1,0 +1,71 @@
+<h1>Listing archives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uuid</th>
+      <th>Start date top</th>
+      <th>Start date left</th>
+      <th>Start date width</th>
+      <th>Start date height</th>
+      <th>Start date</th>
+      <th>End date top</th>
+      <th>End date left</th>
+      <th>End date width</th>
+      <th>End date height</th>
+      <th>End date</th>
+      <th>Coupon top</th>
+      <th>Coupon left</th>
+      <th>Coupon width</th>
+      <th>Coupon height</th>
+      <th>Coupon</th>
+      <th>Date font size</th>
+      <th>Date font color</th>
+      <th>Coupon font size</th>
+      <th>Coupon font color</th>
+      <th>Release start date</th>
+      <th>Release end date</th>
+      <th>Send time</th>
+      <th>Beacon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @archives.each do |archive| %>
+      <tr>
+        <td><%= archive.uuid %></td>
+        <td><%= archive.start_date_top %></td>
+        <td><%= archive.start_date_left %></td>
+        <td><%= archive.start_date_width %></td>
+        <td><%= archive.start_date_height %></td>
+        <td><%= archive.start_date %></td>
+        <td><%= archive.end_date_top %></td>
+        <td><%= archive.end_date_left %></td>
+        <td><%= archive.end_date_width %></td>
+        <td><%= archive.end_date_height %></td>
+        <td><%= archive.end_date %></td>
+        <td><%= archive.coupon_top %></td>
+        <td><%= archive.coupon_left %></td>
+        <td><%= archive.coupon_width %></td>
+        <td><%= archive.coupon_height %></td>
+        <td><%= archive.coupon %></td>
+        <td><%= archive.date_font_size %></td>
+        <td><%= archive.date_font_color %></td>
+        <td><%= archive.coupon_font_size %></td>
+        <td><%= archive.coupon_font_color %></td>
+        <td><%= archive.release_start_date %></td>
+        <td><%= archive.release_end_date %></td>
+        <td><%= archive.send_time %></td>
+        <td><%= archive.beacon_id %></td>
+        <td><%= link_to 'Show', archive %></td>
+        <td><%= link_to 'Edit', edit_archive_path(archive) %></td>
+        <td><%= link_to 'Destroy', archive, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Archive', new_archive_path %>

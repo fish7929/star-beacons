@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uuid: MyString
+  start_date_top: MyString
+  start_date_left: MyString
+  start_date_width: MyString
+  start_date_height: MyString
+  start_date: 2014-06-16
+  end_date_top: MyString
+  end_date_left: MyString
+  end_date_width: MyString
+  end_date_height: MyString
+  end_date: 2014-06-16
+  coupon_top: MyString
+  coupon_left: MyString
+  coupon_width: MyString
+  coupon_height: MyString
+  coupon: 1
+  date_font_size: MyString
+  date_font_color: MyString
+  coupon_font_size: MyString
+  coupon_font_color: MyString
+  release_start_date: 2014-06-16
+  release_end_date: 2014-06-16
+  send_time: 2014-06-16 09:02:22
+  beacon_id: MyString
+
+two:
+  uuid: MyString
+  start_date_top: MyString
+  start_date_left: MyString
+  start_date_width: MyString
+  start_date_height: MyString
+  start_date: 2014-06-16
+  end_date_top: MyString
+  end_date_left: MyString
+  end_date_width: MyString
+  end_date_height: MyString
+  end_date: 2014-06-16
+  coupon_top: MyString
+  coupon_left: MyString
+  coupon_width: MyString
+  coupon_height: MyString
+  coupon: 1
+  date_font_size: MyString
+  date_font_color: MyString
+  coupon_font_size: MyString
+  coupon_font_color: MyString
+  release_start_date: 2014-06-16
+  release_end_date: 2014-06-16
+  send_time: 2014-06-16 09:02:22
+  beacon_id: MyString

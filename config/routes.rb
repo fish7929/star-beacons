@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :archives
+
   resources :send_queues
 
   resources :templates do

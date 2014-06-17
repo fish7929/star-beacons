@@ -1,0 +1,113 @@
+<%= form_for(@archive) do |f| %>
+  <% if @archive.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@archive.errors.count, "error") %> prohibited this archive from being saved:</h2>
+
+      <ul>
+      <% @archive.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date_top %><br>
+    <%= f.text_field :start_date_top %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date_left %><br>
+    <%= f.text_field :start_date_left %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date_width %><br>
+    <%= f.text_field :start_date_width %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date_height %><br>
+    <%= f.text_field :start_date_height %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_top %><br>
+    <%= f.text_field :end_date_top %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_left %><br>
+    <%= f.text_field :end_date_left %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_width %><br>
+    <%= f.text_field :end_date_width %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_height %><br>
+    <%= f.text_field :end_date_height %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_top %><br>
+    <%= f.text_field :coupon_top %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_left %><br>
+    <%= f.text_field :coupon_left %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_width %><br>
+    <%= f.text_field :coupon_width %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_height %><br>
+    <%= f.text_field :coupon_height %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon %><br>
+    <%= f.number_field :coupon %>
+  </div>
+  <div class="field">
+    <%= f.label :date_font_size %><br>
+    <%= f.text_field :date_font_size %>
+  </div>
+  <div class="field">
+    <%= f.label :date_font_color %><br>
+    <%= f.text_field :date_font_color %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_font_size %><br>
+    <%= f.text_field :coupon_font_size %>
+  </div>
+  <div class="field">
+    <%= f.label :coupon_font_color %><br>
+    <%= f.text_field :coupon_font_color %>
+  </div>
+  <div class="field">
+    <%= f.label :release_start_date %><br>
+    <%= f.date_select :release_start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :release_end_date %><br>
+    <%= f.date_select :release_end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :send_time %><br>
+    <%= f.datetime_select :send_time %>
+  </div>
+  <div class="field">
+    <%= f.label :beacon_id %><br>
+    <%= f.text_field :beacon_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

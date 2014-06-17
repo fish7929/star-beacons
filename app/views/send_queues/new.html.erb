@@ -1,5 +1,35 @@
-<h1>New send_queue</h1>
+<div class="customDiv">
+	<script type="text/javascript">
+    function handleFiles(files) {
+      for (var i = 0; i < files.length; i++){
+				var file = files[i];
+        var reader = new FileReader();
+        reader.onload = function(e){
+          document.getElementById("custom").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+	<%= form_for(@send_queue) do |f| %>
+		<%= f.file_field :image, :onchange => "handleFiles(this.files);" %>
+    <img src="/assets/img/demo.jpg" id="custom"/>
+    <div id="customDate">
+			<%= f.label(:start_date, "活动日期") %>
+			<%= f.date_field(:start_date) %>
+			<%= f.date_field(:end_date) %>
+    </div>
+    <div id="customRelease">
+			<%= f.label(:release_start_date, "发布日期") %>
+			<%= f.date_field(:release_start_date) %> - 
+			<%= f.date_field(:release_end_date) %>
+    </div>
+    <div class="beaconsID">
+			<%= f.label(:beacon_id, "允许的蓝基站号") %>
+			<%= f.select(:beacon_id, options_for_select([['1', 1], ['2', 2], ['3', 3]]))%>
+    </div>
+    <input type="submit"  id="draft" name="commit" value="草稿"/>
+    <input type="submit"  id="release" name="commit" value="发布"/>
+  <% end %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', send_queues_path %>

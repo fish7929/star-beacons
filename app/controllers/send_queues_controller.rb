@@ -27,50 +27,37 @@ class SendQueuesController < ApplicationController
   # POST /send_queues
   # POST /send_queues.json
   def create
-=begin
-    @send_queue = SendQueue.new(send_queue_params)
-
-    respond_to do |format|
-      if @send_queue.save
-        format.html { redirect_to @send_queue, notice: 'Send queue was successfully created.' }
-        format.json { render :show, status: :created, location: @send_queue }
-      else
-        format.html { render :new }
-        format.json { render json: @send_queue.errors, status: :unprocessable_entity }
-      end
-    end
-=end
 		my_id = params[:my_id]
-		@send_queue = SendQueue.new
 		if my_id == nil
-			@send_queue.image = params[:image]
+			@send_queue = SendQueue.new(send_queue_params)
 			#@send_queue.start_date_top = template.start_date_top
 			#@send_queue.start_date_left = template.start_date_left
 			#@send_queue.start_date_width = template.start_date_width
 			#@send_queue.start_date_height = template.start_date_height
-			@send_queue.start_date = params[:start_date]
 
 #			@send_queue.end_date_top = template.end_date_top
 #@send_queue.end_date_left = template.end_date_left
 #			@send_queue.end_date_width = template.end_date_width
 #			@send_queue.end_date_height = template.end_date_height
-			@send_queue.end_date = params[:end_date]
 
 #			@send_queue.date_font_size = template.date_font_size
 #			@send_queue.date_font_color = template.date_font_color
 
-			if params[:commit] == "发布"
-			  @send_queue.release_start_date = params[:release_start_date]
-				@send_queue.release_end_date = params[:release_end_date]
+			if params[:commit] == "草稿"
+			  @send_queue.release_start_date = nil
+				@send_queue.release_end_date = nil
 			end
-
-			@send_queue.beacon_id = params[:beacon_id]
-			if @send_queue.save
-				Rails.logger.info "send_queue save OK!!!!"
-			else
-				Rails.logger.info "send_queue save error!!!!"
+			respond_to do |format|
+				if @send_queue.save
+					format.html { redirect_to @send_queue, notice: 'Send queue was successfully created.' }
+					format.json { render :show, status: :created, location: @send_queue}
+				else
+			    format.html { render :new }
+					format.json { render json: @send_queue.errors, status: :unprocessable_entity }
+				end
 			end
 		else
+			@send_queue = SendQueue.new
 			template = Template.find(my_id.to_i)		
 			@send_queue.image = template.image
 			@send_queue.start_date_top = template.start_date_top
@@ -102,11 +89,16 @@ class SendQueuesController < ApplicationController
 			end
 
 			@send_queue.beacon_id = params[:beacon_id]
-			if @send_queue.save
-				Rails.logger.info "send_queue save OK!!!!"
-			else
-				Rails.logger.info "send_queue save error!!!!"
-			end
+			respond_to do |format|
+      	if @send_queue.save
+        	format.html { redirect_to @send_queue, notice: 'Send queue was suc
+ cessfully created.' }
+          format.json { render :show, status: :created, location: @send_queue}
+        else
+          format.html { render "/templates/#{template.id}" }
+          format.json { render json: @send_queue.errors, status: :unprocessable_entity }
+        end
+    	end
 		end
 
   end

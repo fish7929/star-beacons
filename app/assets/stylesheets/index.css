@@ -69,7 +69,7 @@ p{
 	border-radius: 10px;
 }
 
-/* --------main.html----- */
+/* --------beacons_service.html----- */
 .titleLogo #tilteRight{
 	float: right;
 	margin-top: 25px;
@@ -83,7 +83,7 @@ p{
 }
 
 
-/* --------demo.html----- */
+/* --------templates index.html----- */
 .demoDiv{
 	text-align: center;
 	margin-left: auto;
@@ -110,7 +110,7 @@ p{
 	border-radius: 5px;
 }
 
-/* --------edit_demo.html----- */
+/* --------templates show.html----- */
 
 .editDemoDiv{
 	text-align: center;
@@ -124,16 +124,8 @@ p{
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:10px;
-	/*
-	border: 1px solid red;
-	
-	background: url(../img/demoads-01.png) no-repeat;
-	*/
 }
 .editDemoForm  img{
-	/*
-	position: absolute;
-	*/
 	position: relative;
 	z-index: -1;
 	
@@ -181,7 +173,7 @@ p{
 	border-radius: 5px;
 }
 
-/* --------custom.html----- */
+/* --------send_queues new.html----- */
 .customDiv{
 	text-align: center;
 	margin-left: auto;
@@ -228,55 +220,23 @@ p{
 	border-radius: 5px;
 }
 
-/* --------release_history.html----- */
-.releaseDiv{
+/* --------send_queues index.html----- */
+.ad_list_view {
 	text-align: center;
 	margin-left: auto;
 	margin-right:auto;
 
 }
 
-.releaseDiv table{
+.ad_list_view table {
 	width: 800px;
 	margin-left: auto;
 	margin-right:auto;
-	border-color: green;
-	
+	border-color: green;	
 }
 
-/* --------unpublished_history.html----- */
-.unpublishedDiv{
-	text-align: center;
-	margin-left: auto;
-	margin-right:auto;
 
-}
-
-.unpublishedDiv table{
-	width: 800px;
-	margin-left: auto;
-	margin-right:auto;
-	border-color: green;
-	
-}
-
-/* --------unpublished_history.html----- */
-.overdueDiv{
-	text-align: center;
-	margin-left: auto;
-	margin-right:auto;
-
-}
-
-.overdueDiv table{
-	width: 800px;
-	margin-left: auto;
-	margin-right:auto;
-	border-color: green;
-	
-}
-
-/* --------main.html----- */
+/* --------beacons_service.html----- */
 #leftNav {
 	float: left;
 	width: 350px;
@@ -331,7 +291,7 @@ p{
 }
 
 
-/* --------show.html----- */
+/* --------send_queues show.html----- */
 
 .showDiv{
 	text-align: center;
@@ -359,4 +319,65 @@ p{
 	margin-top: 280px;
 }
 
+/* --------send_queues edit.html----- */
 
+.editQueueDiv{
+	text-align: center;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.edit_send_queue{
+	width: 400px;
+	height: 700px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+}
+.edit_send_queue  img{
+	position: relative;
+	z-index: -1;
+	
+}
+.editQueueDiv input[type="text"]{
+	width: 20px;
+	height: 40px;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 38px;
+	position: relative;
+	top: -200px;
+	left: -175px;
+	color: red;
+	font-weight: bold;
+	background-color:transparent;
+	border: 0;
+}
+
+#editQueue_activitiesDate {
+	font-size: 12px;
+	margin-top: -40px;
+	margin-left: -15px;
+}
+
+#editQueue_activitiesDate input[type="date"]{
+	font-size: 12px;
+	width: 110px;
+	background-color:transparent;
+	border: 0;
+}
+
+#editQueue_releaseDate {
+	margin-top: 40px;
+}
+.editQueue_beaconsID {
+	margin-top: 20px;
+	margin-left: -210px;
+}
+
+.editQueueDiv input[type="submit"]{
+	width: 100px;
+	background-color: #3196CA;
+	margin-top: 20px;
+	border-radius: 5px;
+}

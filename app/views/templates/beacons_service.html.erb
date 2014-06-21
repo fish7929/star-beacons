@@ -30,15 +30,15 @@
 					<li>
 						<a  onclick="toggleHistoryUl();">历史查询</a>
 						<ul id='newHistory' style="display:none;">
-							<li><a href="#" target="myFrame">已发布</a></li>
-							<li><a href="#" target="myFrame">未发布</a></li>
-							<li><a href="#" target="myFrame">已过期</a></li>
+							<li><a href="/send_queues?status=ok" target="myFrame">已发布</a></li>
+							<li><a href="/send_queues?status=no" target="myFrame">未发布</a></li>
+							<li><a href="/send_queues?status=pass" target="myFrame">已过期</a></li>
 						</ul>
 					</li>
 				</ul>
 			</div>
 			<div id="rightFrame" >
-				<iframe src="/templates/frame_welcome" name="myFrame"  width=900 height=850 frameborder=0 scrolling=no > </iframe>
+				<iframe src="/templates/frame_welcome" name="myFrame"  width=900 height=850 frameborder=0 scrolling=auto > </iframe>
 			</div>
 		</div>
 	</body>

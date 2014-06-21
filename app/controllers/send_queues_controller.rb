@@ -1,18 +1,51 @@
+require "date"
+require "time"
 class SendQueuesController < ApplicationController
 	respond_to :json, :xml, :html
 	# you can disable csrf protection on controller-by-controller basis:
 	skip_before_filter :verify_authenticity_token
   before_action :set_send_queue, only: [:show, :edit, :update, :destroy]
 
+	
   # GET /send_queues
   # GET /send_queues.json
   def index
-    @send_queues = SendQueue.all
+		status = params[:status]
+		beacon_id = params[:beacon_id]
+		day = Date.today
+		if status == nil
+			if beacon_id != nil
+				queues = SendQueue.where("beacon_id = ?", beacon_id)
+				queues.each do |send_queue|
+				  send_queue.update(:send_time => Time.now)
+				end
+				@send_queues = SendQueue.where("release_end_date >= ? AND release_start_date <= ? AND beacon_id = ?", day, day, beacon_id)
+			else
+				@send_queues = SendQueue.all
+			end
+		elsif status == "ok"
+			@send_queues = SendQueue.where("release_end_date >= ?", day)
+			@title = "正在发布的广告"
+		elsif status == "no"
+			@send_queues = SendQueue.where(release_start_date: nil)
+			@title = "草稿中的广告"
+		elsif status == "pass"
+			@send_queues = SendQueue.where("release_end_date < ?", day)
+			@title = "已经过期的广告"
+		end
+		respond_with @send_queues
   end
 
   # GET /send_queues/1
   # GET /send_queues/1.json
   def show
+=begin	
+		respond_to do |format|
+			format.html {}
+			format.png {}
+		end
+=end
+		respond_with @send_queue
   end
 
   # GET /send_queues/new
@@ -108,11 +141,21 @@ class SendQueuesController < ApplicationController
   def update
     respond_to do |format|
       if @send_queue.update(send_queue_params)
-        format.html { redirect_to @send_queue, notice: 'Send queue was successfully updated.' }
-        format.json { render :show, status: :ok, location: @send_queue }
+        format.html { redirect_to "/send_queues?status=ok", notice: 'Send queue was successfully updated.' }
+        format.json { render :"/send_queues?status=ok", status: :ok, location: @send_queue }
       else
-        format.html { render :edit }
-        format.json { render json: @send_queue.errors, status: :unprocessable_entity }
+				if @send_queue.release_start_date == nil
+					format.html { render "/send_queues?status=no" }
+					format.json { render json: @send_queue.errors, status: :unprocessable_entity }
+				else
+					if @send_queue.release_end_date >= Date.today
+						format.html { render "/send_queues?status=ok" }
+						format.json { render json: @send_queue.errors, status: :unprocessable_entity }
+					else
+						format.html { render "/send_queues?status=pass" }
+						format.json { render json: @send_queue.errors, status: :unprocessable_entity }
+					end
+				end
       end
     end
   end
@@ -127,6 +170,18 @@ class SendQueuesController < ApplicationController
     end
   end
 
+	def drops
+		@send_queue = SendQueue.find(params[:my_id])
+		respond_to do |format|
+			if @send_queue.update(:release_end_date => Date.today - 1)
+				format.html {redirect_to "/send_queues?status=ok"}
+			else
+				format.html {reder "/send_queues?status=ok"}
+			end
+		end
+	end
+	
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_send_queue
@@ -137,4 +192,5 @@ class SendQueuesController < ApplicationController
     def send_queue_params
       params.require(:send_queue).permit(:image, :start_date_top, :start_date_left, :start_date_width, :start_date_height, :start_date, :end_date_top, :end_date_left, :end_date_width, :end_date_height, :end_date, :coupon_top, :coupon_left, :coupon_width, :coupon_height, :coupon, :date_font_size, :date_font_color, :coupon_font_size, :coupon_font_color, :release_start_date, :release_end_date, :send_time, :beacon_id)
     end
+
 end

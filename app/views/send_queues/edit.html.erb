@@ -1,6 +1,38 @@
-<h1>Editing send_queue</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @send_queue %> |
-<%= link_to 'Back', send_queues_path %>
+<div class="editQueueDiv">
+	<%= form_for(@send_queue) do |f| %>
+    <%= image_tag @send_queue.image.url(:medium) %>
+		<% if @send_queue.coupon != nil %>
+		<%= f.text_field :coupon %>
+		<% end %>
+    <div id="editQueue_activitiesDate">
+      <label for="start_date">活动日期:</label>
+			<%= f.date_field :start_date %> - 
+			<%= f.date_field :end_date %>
+    </div>
+    <div id="editQueue_releaseDate">
+      <label for="release_start_date">发布日期:</label>
+			<%= f.date_field :release_start_date %> - 
+			<%= f.date_field :release_end_date %>
+    </div>
+    <div class="editQueue_beaconsID">
+      允许的蓝牙基站号:
+			<%= f.select(:beacon_id, options_for_select([['1', 1],['2', 2],['3', 3]])) %>
+    </div>
+    <input type="submit"  id="cancel" name="cancel" value="取消"/>
+    <input type="submit"  id="release" name="commit" value="更新"/>
+		<script type="text/javascript">
+			$('#cancel').click(function(e){
+				e.preventDefault();
+				<% if @send_queue.release_start_date == nil %>
+				window.location.href = "/send_queues?status=no"
+				<% else %>
+					<% if @send_queue.release_end_date >= Date.today %>
+					window.location.href = "/send_queues?status=ok"
+					<% else %>
+					window.location.href = "/send_queues?status=pass"
+					<% end %>
+				<% end %>
+			});
+		</script>
+	<% end %>
+</div>

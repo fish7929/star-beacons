@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   resources :archives
 
-  resources :send_queues
+  resources :send_queues do
+		collection do 
+			get :drops
+		end
+	end
 
   resources :templates do
     collection do
@@ -11,7 +15,6 @@ Rails.application.routes.draw do
       post :check_login	
       get :beacons_service
       get :frame_welcome
-      get :custom
     end
   end
 

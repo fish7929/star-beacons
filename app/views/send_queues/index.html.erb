@@ -1,71 +1,28 @@
-<h1>Listing send_queues</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Uuid</th>
-      <th>Start date top</th>
-      <th>Start date left</th>
-      <th>Start date width</th>
-      <th>Start date height</th>
-      <th>Start date</th>
-      <th>End date top</th>
-      <th>End date left</th>
-      <th>End date width</th>
-      <th>End date height</th>
-      <th>End date</th>
-      <th>Coupon top</th>
-      <th>Coupon left</th>
-      <th>Coupon width</th>
-      <th>Coupon height</th>
-      <th>Coupon</th>
-      <th>Date font size</th>
-      <th>Date font color</th>
-      <th>Coupon font size</th>
-      <th>Coupon font color</th>
-      <th>Release start date</th>
-      <th>Release end date</th>
-      <th>Send time</th>
-      <th>Beacon</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @send_queues.each do |send_queue| %>
-      <tr>
-        <td><%= send_queue.uuid %></td>
-        <td><%= send_queue.start_date_top %></td>
-        <td><%= send_queue.start_date_left %></td>
-        <td><%= send_queue.start_date_width %></td>
-        <td><%= send_queue.start_date_height %></td>
-        <td><%= send_queue.start_date %></td>
-        <td><%= send_queue.end_date_top %></td>
-        <td><%= send_queue.end_date_left %></td>
-        <td><%= send_queue.end_date_width %></td>
-        <td><%= send_queue.end_date_height %></td>
-        <td><%= send_queue.end_date %></td>
-        <td><%= send_queue.coupon_top %></td>
-        <td><%= send_queue.coupon_left %></td>
-        <td><%= send_queue.coupon_width %></td>
-        <td><%= send_queue.coupon_height %></td>
-        <td><%= send_queue.coupon %></td>
-        <td><%= send_queue.date_font_size %></td>
-        <td><%= send_queue.date_font_color %></td>
-        <td><%= send_queue.coupon_font_size %></td>
-        <td><%= send_queue.coupon_font_color %></td>
-        <td><%= send_queue.release_start_date %></td>
-        <td><%= send_queue.release_end_date %></td>
-        <td><%= send_queue.send_time %></td>
-        <td><%= send_queue.beacon_id %></td>
-        <td><%= link_to 'Show', send_queue %></td>
-        <td><%= link_to 'Edit', edit_send_queue_path(send_queue) %></td>
-        <td><%= link_to 'Destroy', send_queue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Send queue', new_send_queue_path %>
+<div class="ad_list_view">
+	<h1><%= @title %></h1>
+	<table border="1" cellspacing="0" cellpadding="2">
+		<thead>
+			<tr>
+				<th>广告</th>
+				<th>活动时间</th>
+				<th>发布时间</th>
+				<th colspan="2">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @send_queues.each do |send_queue| %>
+				<tr>
+					<td><a href="/send_queues/<%= send_queue.id %>"><img src="<%= send_queue.image.url(:mini) %>" /></a></td>
+					<td><%= send_queue.start_date %> - <%= send_queue.end_date %></td>
+					<td><%= send_queue.release_start_date %> - <%= send_queue.release_end_date %></td>
+					<td><a href="/send_queues/<%= send_queue.id %>/edit">编辑</a></td>
+					<% if send_queue.release_end_date != nil %>
+						<% if send_queue.release_end_date >= Date.today  %>
+							<td><a href="/send_queues/drops?my_id=<%= send_queue.id%>">下架</a></td>
+						<% end %>	
+					<% end %>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

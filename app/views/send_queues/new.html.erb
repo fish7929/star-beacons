@@ -14,11 +14,12 @@
 	<%= form_for(@send_queue) do |f| %>
 		<%= f.file_field :image, :onchange => "handleFiles(this.files);" %>
     <img src="/assets/img/demo.jpg" id="custom"/>
-    <div id="customDate">
-			<%= f.label(:start_date, "活动日期") %>
-			<%= f.date_field(:start_date) %>
-			<%= f.date_field(:end_date) %>
-    </div>
+		<div class="customMsg">
+			<%= f.label(:msg_title,"广告标题") %>
+			<%= f.text_field(:msg_title) %>
+			<%= f.label(:msg_summary,"广告概述") %>
+			<%= f.text_field(:msg_summary) %>
+		</div>
     <div id="customRelease">
 			<%= f.label(:release_start_date, "发布日期") %>
 			<%= f.date_field(:release_start_date) %> - 

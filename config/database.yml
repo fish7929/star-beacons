@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql
+  adapter: mysql2
   host: localhost
   username: beacons
   password: m4Z5Q8q72x4n7C2A

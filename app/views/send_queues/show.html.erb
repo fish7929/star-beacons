@@ -1,9 +1,11 @@
 <div class="showDiv">
 	<img src="<%= @send_queue.image.url(:larger) %>"/>
 	<p ><%= @send_queue.coupon %></p>
+	<% if @send_queue.start_date != nil %>
 	<div id="showDate">
 		<p>活动日期:
 			<span><%= @send_queue.start_date %></span> - <span><%= @send_queue.end_date %></span>
 		</p>
 	</div>
+	<% end %>
 </div>

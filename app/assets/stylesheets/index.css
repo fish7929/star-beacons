@@ -130,7 +130,7 @@ p{
 	z-index: -1;
 	
 }
-.editDemoDiv input[type="text"]{
+#coupon {
 	width: 20px;
 	height: 40px;
 	border-radius: 3px;
@@ -157,13 +157,21 @@ p{
 	background-color:transparent;
 	border: 0;
 }
+.summary{
+	margin-top: 30px;
+	margin-left: -5px;
+}
+
+#msg_summary { 
+	width: 310px;
+}
 
 #releaseDate {
-	margin-top: 40px;
+	margin-top: 10px;
 }
 .beaconsID {
 	margin-top: 20px;
-	margin-left: -210px;
+	margin-left: -220px;
 }
 
 .editDemoDiv input[type="submit"]{
@@ -198,20 +206,17 @@ p{
 	z-index: -1;
 
 }
-#customDate {
-	font-size: 12px;
-	margin-top: -40px;
-	margin-left: -15px;
+.customMsg {
+	margin-top: 20px;
+	margin-left: -30px;
 }
 
-#customDate input[type="date"]{
+.customMsg input[type="text"]{
 	font-size: 12px;
 	width: 110px;
-	background-color:transparent;
-	border: 0;
 }
 #customRelease {
-	margin-top: 30px;
+	margin-top: 20px;
 }
 .new_send_queue input[type="submit"]{
 	width: 100px;
@@ -339,7 +344,7 @@ p{
 	z-index: -1;
 	
 }
-.editQueueDiv input[type="text"]{
+#send_queue_coupon {
 	width: 20px;
 	height: 40px;
 	border-radius: 3px;
@@ -368,7 +373,7 @@ p{
 }
 
 #editQueue_releaseDate {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 .editQueue_beaconsID {
 	margin-top: 20px;
@@ -380,4 +385,13 @@ p{
 	background-color: #3196CA;
 	margin-top: 20px;
 	border-radius: 5px;
+}
+
+.editMsg {
+	margin-top: 30px;
+	margin-left: -10px;
+}
+.editMsg input[type="text"]{
+	  font-size: 12px;
+		  width: 115px;
 }

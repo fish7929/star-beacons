@@ -6,6 +6,7 @@
 				<th>广告</th>
 				<th>活动时间</th>
 				<th>发布时间</th>
+				<th>基站号</th>
 				<th colspan="2">操作</th>
 			</tr>
 		</thead>
@@ -15,6 +16,7 @@
 					<td><a href="/send_queues/<%= send_queue.id %>"><img src="<%= send_queue.image.url(:mini) %>" /></a></td>
 					<td><%= send_queue.start_date %> - <%= send_queue.end_date %></td>
 					<td><%= send_queue.release_start_date %> - <%= send_queue.release_end_date %></td>
+					<td><%= send_queue.beacon_id %></td>
 					<td><a href="/send_queues/<%= send_queue.id %>/edit">编辑</a></td>
 					<% if send_queue.release_end_date != nil %>
 						<% if send_queue.release_end_date >= Date.today  %>

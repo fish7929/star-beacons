@@ -15,11 +15,13 @@ class SendQueuesController < ApplicationController
 		day = Date.today
 		if status == nil
 			if beacon_id != nil
-				queues = SendQueue.where("beacon_id = ?", beacon_id)
-				queues.each do |send_queue|
-				  send_queue.update(:send_time => Time.now)
-				end
 				@send_queues = SendQueue.where("release_end_date >= ? AND release_start_date <= ? AND beacon_id = ?", day, day, beacon_id)
+				@send_queues.each do |send_queue|
+					send_queue.send_time = Time.now
+					send_queue.image_url = request.host+"#{send_queue.image.url(:larger)}"
+					send_queue.save
+				end
+				Rails.logger.info @send_queues.to_json
 			else
 				@send_queues = SendQueue.all
 			end
@@ -63,18 +65,6 @@ class SendQueuesController < ApplicationController
 		my_id = params[:my_id]
 		if my_id == nil
 			@send_queue = SendQueue.new(send_queue_params)
-			#@send_queue.start_date_top = template.start_date_top
-			#@send_queue.start_date_left = template.start_date_left
-			#@send_queue.start_date_width = template.start_date_width
-			#@send_queue.start_date_height = template.start_date_height
-
-#			@send_queue.end_date_top = template.end_date_top
-#@send_queue.end_date_left = template.end_date_left
-#			@send_queue.end_date_width = template.end_date_width
-#			@send_queue.end_date_height = template.end_date_height
-
-#			@send_queue.date_font_size = template.date_font_size
-#			@send_queue.date_font_color = template.date_font_color
 
 			if params[:commit] == "草稿"
 			  @send_queue.release_start_date = nil
@@ -115,6 +105,9 @@ class SendQueuesController < ApplicationController
 			@send_queue.date_font_color = template.date_font_color
 			@send_queue.coupon_font_color = template.coupon_font_color
 			@send_queue.coupon_font_size = template.coupon_font_size
+			
+			@send_queue.msg_title = template.template_type
+			@send_queue.msg_summary = params[:msg_summary]
 	
 			if params[:commit] == "发布"
 				@send_queue.release_start_date = params[:release_start_date]			
@@ -190,7 +183,7 @@ class SendQueuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def send_queue_params
-      params.require(:send_queue).permit(:image, :start_date_top, :start_date_left, :start_date_width, :start_date_height, :start_date, :end_date_top, :end_date_left, :end_date_width, :end_date_height, :end_date, :coupon_top, :coupon_left, :coupon_width, :coupon_height, :coupon, :date_font_size, :date_font_color, :coupon_font_size, :coupon_font_color, :release_start_date, :release_end_date, :send_time, :beacon_id)
+      params.require(:send_queue).permit(:image, :start_date_top, :start_date_left, :start_date_width, :start_date_height, :start_date, :end_date_top, :end_date_left, :end_date_width, :end_date_height, :end_date, :coupon_top, :coupon_left, :coupon_width, :coupon_height, :coupon, :date_font_size, :date_font_color, :coupon_font_size, :coupon_font_color, :release_start_date, :release_end_date, :send_time, :beacon_id, :msg_title, :msg_summary, :image_url)
     end
 
 end

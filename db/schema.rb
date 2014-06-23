@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616091202) do
+ActiveRecord::Schema.define(version: 20140621143628) do
 
   create_table "archives", force: true do |t|
     t.string   "uuid"
@@ -77,6 +77,9 @@ ActiveRecord::Schema.define(version: 20140616091202) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "msg_title"
+    t.string   "msg_summary"
+    t.string   "image_url"
   end
 
   create_table "templates", force: true do |t|
